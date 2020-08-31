@@ -80,3 +80,4 @@ cadastro.pushButton_2.clicked.connect(segunda_tela)
 
 cadastro.show()
 app.exec()
+print('FIM')
