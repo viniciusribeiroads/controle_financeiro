@@ -2,6 +2,7 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import sys
 import mysql.connector
+from reportab.pdfgen import canvas
 
 """conexao ao banco de dados"""
 
@@ -51,12 +52,17 @@ def novo_cadastro():
 
 def sair():
     sys.exit()
+
+
+def gerar_pdf():
+    print('pdf')
     
 
 
 def segunda_tela():
     listar_dados.show()
     listar_dados.pushButton.clicked.connect(sair)
+    listar_dados.pushButton_2.clicked.connect(gerar_pdf)
 
     cursor = banco.cursor()
     comando_SQL = "SELECT * FROM controle"
@@ -80,5 +86,3 @@ cadastro.pushButton_2.clicked.connect(segunda_tela)
 
 cadastro.show()
 app.exec()
-print('FIM')
-print('')
